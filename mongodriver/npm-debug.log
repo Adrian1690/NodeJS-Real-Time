@@ -1,21 +1,99 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'mongokin@0.6.1',
+1 verbose cli   '--save' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.36
-4 error install Couldn't read dependencies
-5 error Failed to parse json
-5 error Unexpected token i
-6 error File: /Users/julioadrianpenaromero/Documents/NodeJs Scripts/mongodriver/package.json
-7 error Failed to parse package.json data.
-7 error package.json must be actual JSON, not just JavaScript.
-7 error
-7 error This is not a bug in npm.
-7 error Tell the package author to fix their package.json file. JSON.parse
-8 error System Darwin 14.1.0
-9 error command "node" "/usr/local/bin/npm" "install"
-10 error cwd /Users/julioadrianpenaromero/Documents/NodeJs Scripts/mongodriver
-11 error node -v v0.10.36
-12 error npm -v 1.4.28
-13 error file /Users/julioadrianpenaromero/Documents/NodeJs Scripts/mongodriver/package.json
-14 error code EJSONPARSE
-15 verbose exit [ 1, true ]
+4 warn package.json node-example@0.0.1 No description
+5 warn package.json node-example@0.0.1 No repository field.
+6 warn package.json node-example@0.0.1 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'mongokin@0.6.1', null ]
+9 verbose cache add name=undefined spec="mongokin@0.6.1" args=["mongokin@0.6.1",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'mongokin@0.6.1',
+10 verbose parsed url   path: 'mongokin@0.6.1',
+10 verbose parsed url   href: 'mongokin@0.6.1' }
+11 verbose cache add name="mongokin" spec="0.6.1" args=["mongokin","0.6.1"]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: '0.6.1',
+12 verbose parsed url   path: '0.6.1',
+12 verbose parsed url   href: '0.6.1' }
+13 verbose addNamed [ 'mongokin', '0.6.1' ]
+14 verbose addNamed [ '0.6.1', '0.6.1' ]
+15 silly lockFile 52532309-mongokin-0-6-1 mongokin@0.6.1
+16 verbose lock mongokin@0.6.1 /Users/julioadrianpenaromero/.npm/52532309-mongokin-0-6-1.lock
+17 verbose request where is /mongokin
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 0e0c44ae9dfb71b7
+20 verbose url raw /mongokin
+21 verbose url resolving [ 'https://registry.npmjs.org/', './mongokin' ]
+22 verbose url resolved https://registry.npmjs.org/mongokin
+23 verbose request where is https://registry.npmjs.org/mongokin
+24 info trying registry request attempt 1 at 18:41:17
+25 http GET https://registry.npmjs.org/mongokin
+26 http 404 https://registry.npmjs.org/mongokin
+27 verbose headers { date: 'Thu, 12 Feb 2015 23:41:18 GMT',
+27 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 verbose headers   'content-type': 'application/json',
+27 verbose headers   'cache-control': 'max-age=0',
+27 verbose headers   'content-length': '52',
+27 verbose headers   'accept-ranges': 'bytes',
+27 verbose headers   via: '1.1 varnish',
+27 verbose headers   age: '0',
+27 verbose headers   'x-served-by': 'cache-jfk1021-JFK',
+27 verbose headers   'x-cache': 'MISS',
+27 verbose headers   'x-cache-hits': '0',
+27 verbose headers   'x-timer': 'S1423784478.497584,VS0,VE355',
+27 verbose headers   'keep-alive': 'timeout=10, max=50',
+27 verbose headers   connection: 'Keep-Alive' }
+28 silly registry.get cb [ 404,
+28 silly registry.get   { date: 'Thu, 12 Feb 2015 23:41:18 GMT',
+28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=0',
+28 silly registry.get     'content-length': '52',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     'x-served-by': 'cache-jfk1021-JFK',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1423784478.497584,VS0,VE355',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 silly lockFile 52532309-mongokin-0-6-1 mongokin@0.6.1
+30 silly lockFile 52532309-mongokin-0-6-1 mongokin@0.6.1
+31 error 404 404 Not Found: mongokin
+31 error 404
+31 error 404 'mongokin' is not in the npm registry.
+31 error 404 You should bug the author to publish it
+31 error 404 It was specified as a dependency of 'node-example'
+31 error 404
+31 error 404 Note that you can also install from a
+31 error 404 tarball, folder, or http url, or git url.
+32 error System Darwin 14.1.0
+33 error command "node" "/usr/local/bin/npm" "install" "mongokin@0.6.1" "--save"
+34 error cwd /Users/julioadrianpenaromero/Documents/NodeJs Scripts/mongodriver
+35 error node -v v0.10.36
+36 error npm -v 1.4.28
+37 error code E404
+38 verbose exit [ 1, true ]
