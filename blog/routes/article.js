@@ -67,7 +67,7 @@ exports.postArticle = function(req, res, next){
   }
   var article = {
     title : req.body.title,
-    slug : req.dody.slug,
+    slug : req.body.slug,
     text : req.body.text,
     published : false
   };

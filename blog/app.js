@@ -50,8 +50,8 @@ app.get('/login',routes.user.login);
 app.post('/login',routes.user.authenticate);
 app.get('/login',routes.user.logout);
 app.get('/admin',routes.article.admin);
-app.post('/post',routes.article.post);
-app.get('/post',routes.article.postArticle);
+app.get('/post',routes.article.post);  
+app.post('/post',routes.article.postArticle);
 app.get('/articles/:slug',routes.article.show);
 
 // rest api routes

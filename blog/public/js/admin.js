@@ -1,4 +1,4 @@
-jaxSetup({
+$.ajaxSetup({
   xhrFields: {withCredentials: true},
   error: function(xhr, status, error) {
     $('.alert').removeClass('hidden');
@@ -13,9 +13,10 @@ var findTr = function(event) {
   return $tr;
 };
 
-var remove = function(event) {
+var remove = function(event) { 
   var $tr = findTr(event);
   var id = $tr.data('id');
+
   $.ajax({
     url: '/api/articles/' + id,
     type: 'DELETE',
