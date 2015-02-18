@@ -41,8 +41,6 @@ var authorize = function (req, res, next){
   else
     res.render('login' ,{error : "Introduce your email and password file"});
     //return res.send(401);//no autorized
-    
-    
 };
 
 // define port view and view engine
