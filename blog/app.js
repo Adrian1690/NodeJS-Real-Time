@@ -39,8 +39,9 @@ var authorize = function (req, res, next){
   if(req.session && req.session.admin)
     return next();
   else
-    return res.send(401);//no autorized
-    //res.render('login' ,{error : "Introduce your email and password file"});
+    res.render('login' ,{error : "Introduce your email and password file"});
+    //return res.send(401);//no autorized
+    
     
 };
 
@@ -67,7 +68,7 @@ if('development' === app.get('env')){
 
 // pages and routes
 
-/* app.get('/pruebas',function(req,res){
+app.get('/pruebas',function(req,res){
   db.collection("users",function(err,collection){
     collection.find().toArray(function(err, docs) {
           console.log("Printing docs from Array")
@@ -78,7 +79,6 @@ if('development' === app.get('env')){
     });
  });
 });
-*/
 
 app.get('/',routes.index);
 app.get('/login',routes.user.login);
