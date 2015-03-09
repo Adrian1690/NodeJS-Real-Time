@@ -4,14 +4,22 @@ var TWITTER_CONSUMER_SECRET = process.env.TWITTER_CONSUMER_SECRET;
 var express = require('express'), routes = require('./routes');
 var http = require('http');
 var path = require('path');
-var mongoskin = require('mongoskin'),
-    dbUrl = process.env.MONGOHQ_URL || 'mongodb://@localhost:27017/blog',
-    db = mongoskin.db(dbUrl,{safe:true}),
-    collections = {
+
+ 
+//var mongoskin = require('mongoskin');
+var mongoose = require('mongoose');
+var models = require('./models');
+
+var dbUrl = process.env.MONGOHQ_URL || 'mongodb://@localhost:27017/blog';
+//var db = mongoskin.db(dbUrl,{safe:true});
+//sustitute this collections for omngoose connection
+/*var collections = {
       articles : db.collection('articles'),
       users : db.collection('users')	
-    },
-    everyauth = require('everyauth');
+    };*/
+var db = mongoose.connect(dbUrl, {safe:true});
+
+var everyauth = require('everyauth');
     
 var session = require('express-session'),
     logger = require('morgan'),
@@ -52,10 +60,14 @@ app.locals.appTitle = 'blog-de-Adrian';
 //app.set('appName', 'hello-world');
 
 app.use(function(req, res, next){
-  if(!collections.articles || !collections.users) return next(new Error('No collections,'))	
-  req.collections = collections;
-  return next ();
+  //if(!collections.articles || !collections.users) return next(new Error('No collections,'))	
+  //req.collections = collections;
+  if(!models.Article || !models.User) return next( new Error("No models.") )
+  req.models = models;
+  return next();
 });
+
+
 
 
 // define port view and view engine

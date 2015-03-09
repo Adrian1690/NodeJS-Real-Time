@@ -23,7 +23,7 @@ exports.authenticate = function (req, res , next){
   console.log( 'email:' + req.body.email + ' pass:' +req.body.password);
   if ( !req.body.email || !req.body.password)
     return res.render('login', {error : "Email or Password is empty"});
-  req.collections.users.findOne({
+  req.models.User.findOne({
     email : req.body.email,
     password : req.body.password
   }, function (error, user){
